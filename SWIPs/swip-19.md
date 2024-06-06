@@ -115,6 +115,14 @@ we also have overload function with 2 parameters
 
 which works as before, but is left more for debugging purposes and its safe for nodes to use the first one.
 
+### Bee changes
+
+Since stakes are keyed by the address the signiture of the stake accessor changed this has impactimpact on the Bee's blockchain interface as used by the stakes GET endpoint.
+
+In particular the overlay argument of the accessor needs to be changed to Ethereum address.
+
+The way Bee supports neighborhood change only on fresh start but in order to accomodate this change we need to allow overlay mining: target neighborhood setting must work even if the Ethereum address is already staked.
+
 ## Backward compatibility
 
 Since we are changing how information is passed (both the overlay address and the Ethereum address), this change is not backwards-compatible.
