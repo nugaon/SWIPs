@@ -70,7 +70,7 @@ Withdraw will now also be done with address and not overlay so this should be ca
 Both freeze and slash deposit are now done by address so we call
 
 `function freezeDeposit(address _owner, uint256 _time)`
-`function slashDeposit(address _owner, uint256 _amount`
+`function slashDeposit(address _owner, uint256 _amount)
 
 and emit
 
