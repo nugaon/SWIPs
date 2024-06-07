@@ -51,7 +51,7 @@ The implementation requires change of indices: from one keyed by the overlay add
 
 #### The stake deposit endpoint:
 
-From previous function we now have the one where we don't send nodes addrees it is auto picked from sender and calculated
+From previous function we now have the one where we don't send nodes address it is auto picked from sender and calculated
 
 `function depositStake(bytes32 _nonce, uint256 _amount)`
 
