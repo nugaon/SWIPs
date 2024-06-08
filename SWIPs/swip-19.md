@@ -121,7 +121,16 @@ Since stakes are keyed by the address the signiture of the stake accessor change
 
 In particular the overlay argument of the accessor needs to be changed to Ethereum address.
 
-The way Bee supports neighborhood change only on fresh start but in order to accomodate this change we need to allow overlay mining: target neighborhood setting must work even if the Ethereum address is already staked.
+The way Bee supports neighborhood hopping only on fresh start. 
+In order to change to a target neighborhood, the bee node needs to do ooverlay mining: find a nonce such that the overlay falls in the required range described by an address prefix.
+Ideally, this functionality must work even if the Ethereum address is already staked and perform the following steps.
+
+1. check if node address has stake
+2. prompt the user that db is about to be nuked
+3. mine overlay into target neighbourhood
+4. nuke db and exit if errors
+5. if staked, change overlay in smart contract
+
 
 ## Backward compatibility
 
