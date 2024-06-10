@@ -118,6 +118,7 @@ which works as before, but is left more for debugging purposes and its safe for 
 ### Bee changes
 
 Since stakes are keyed by the address the signiture of the stake accessor changed this has impactimpact on the Bee's blockchain interface as used by the stakes GET endpoint.
+This includes dropping the `overlay` parameter in `commit` functions and change `overlay` parameter to `owner` in `reveal` and `getStake` functions.
 
 In particular the overlay argument of the accessor needs to be changed to Ethereum address.
 
@@ -128,7 +129,7 @@ Ideally, this functionality must work even if the Ethereum address is already st
 1. check if node address has stake
 2. prompt the user that db is about to be nuked
 3. mine overlay into target neighbourhood
-4. nuke db and exit if errors
+4. accommodate the node to the new environment by cleaning up databases
 5. if staked, change overlay in smart contract
 
 
